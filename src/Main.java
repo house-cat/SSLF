@@ -1,6 +1,3 @@
-package com.housecat.sslf
-
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -31,7 +28,7 @@ class SSLF {
         ArrayList<Token> list = SSLFlexer.lex();
 
         Parser SSLFparser = new Parser(list);
-        Interpreter SSLFinterpreter = new Interpreter(parser.getStatements());
+        Interpreter SSLFinterpreter = new Interpreter(SSLFparser.getStatements());
 
         SSLFparser.parse();
         SSLFinterpreter.interpret();
@@ -42,6 +39,10 @@ class SSLF {
 public class Main {
 
     public static void main(String[] args) {
+        if(args.length<1) {
+            System.out.println("input your filename");
+            System.exit(-1);
+        }
         SSLF.loadProgramFile(args[0]);
         SSLF.execute();
     }

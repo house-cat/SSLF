@@ -1,5 +1,3 @@
-package com.housecat.sslf;
-
 public abstract class Token<T> {
 
     protected T value;
