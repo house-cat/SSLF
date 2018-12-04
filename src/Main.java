@@ -39,12 +39,17 @@ class SSLF {
 public class Main {
 
     public static void main(String[] args) {
+
+        new GUI();
+
+        /*
         if(args.length<1) {
             System.out.println("input your filename");
             System.exit(-1);
         }
         SSLF.loadProgramFile(args[0]);
         SSLF.execute();
+        */
     }
 
 }
